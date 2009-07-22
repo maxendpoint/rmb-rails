@@ -5,7 +5,7 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "rmb-rails"
-    gem.summary = %Q{TODO}
+    gem.summary = %Q{RESTful Message Beans for Rails}
     gem.email = "keburgett@gmail.com"
     gem.homepage = "http://github.com/explainer/rmb-rails"
     gem.authors = ["Ken Burgett"]
