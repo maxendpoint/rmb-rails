@@ -11,7 +11,7 @@ module RMB
     def properties=(hash)
       super
       @hash = hash
-      @daemon_name = "#{LD}#{hash[:key]}"
+      @daemon_name = "#{RMB::Properties.daemon_prefix}#{hash[:key]}"
       submitter = hash[:submitter]
       @user = submitter[:user] || ""
       @password = submitter[:password] || ""

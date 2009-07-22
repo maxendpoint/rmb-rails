@@ -76,7 +76,7 @@ particular Listener instance), the initialize method sets up the entire daemon.
     end
     
     def app_name
-      "#{LD}#{@key}"
+      "#{RMB::Properties.daemon_prefix}#{@key}"
     end
   end
 

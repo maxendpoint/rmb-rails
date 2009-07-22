@@ -7,7 +7,8 @@
 
 require 'rubygems'
 require 'logger'
-require 'rmb'
+require 'rmb-rails'
+include RMB
 
 
 #

@@ -1,7 +1,7 @@
 module RMB
 
   #
-  # This code is called from the client application.  It starts/stops the daemon controller script
+  # This code is called from the client application.  It starts/stops the daemon via a control script
   #
   class ListenerClient
   
@@ -19,7 +19,7 @@ module RMB
     
     def control(action)
       setup
-      control_script = "ruby #{File.dirname(__FILE__)}/#{LD}control.rb #{action}"
+      control_script = "ruby #{File.dirname(__FILE__)}/#{RMB::Properties.daemon_prefix}control.rb #{action}"
       control_params = "#{@hash[:working_dir]} #{@hash[:key]}"
       system("#{control_script} #{control_params} -- #{control_params}")
     end
@@ -40,7 +40,7 @@ private
 
     def setup
       # add derived values to the daemon_options hash
-      @hash[:daemon_options][:app_name] = "#{LD}#{@hash[:key]}"
+      @hash[:daemon_options][:app_name] = "#{RMB::Properties.daemon_prefix}#{@hash[:key]}"
       @hash[:daemon_options][:dir] = File.join("#{@hash[:working_dir]}", "tmp", "pids")
       # Ensure the properties folder is present
       properties_dir = File.join("#{@hash[:working_dir]}", "tmp", "properties")

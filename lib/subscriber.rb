@@ -1,3 +1,4 @@
+
 module RMB
 
 class Subscriber
