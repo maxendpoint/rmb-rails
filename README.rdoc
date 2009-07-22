@@ -1,0 +1,7 @@
+= rmb-rails
+
+Description goes here.
+
+== Copyright
+
+Copyright (c) 2009 Ken Burgett. See LICENSE for details.
