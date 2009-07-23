@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{rmb-rails}
-  s.version = "0.1.4"
+  s.version = "0.1.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ken Burgett"]
@@ -19,7 +19,6 @@ Gem::Specification.new do |s|
      "LICENSE",
      "README.rdoc",
      "Rakefile",
-     "VERSION",
      "lib/listener_client.rb",
      "lib/listener_daemon.rb",
      "lib/listener_daemon_control.rb",
