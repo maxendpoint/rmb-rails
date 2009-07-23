@@ -72,11 +72,11 @@ RESTful-Message-Beans(http://github.com/explainer/RESTful-Message-Beans/tree/mas
 demo rails application using this gem.
 
 == Credits
-{ActiveMQ}[http://activemq.apache.org/]
+{ActiveMQ}[http://activemq.apache.org/] find the message broker here
 
-{Enterprise Recipes with Ruby and Rails}[http://www.pragprog.com/titles/msenr/enterprise-recipes-with-ruby-and-rails]
+{Enterprise Recipes with Ruby and Rails}[http://www.pragprog.com/titles/msenr/enterprise-recipes-with-ruby-and-rails] A special thanks to Maik Schmidt for this useful book.
 
-{Jeweler gem}[http://technicalpickles.github.com/jeweler/]
+{Jeweler gem}[http://technicalpickles.github.com/jeweler/] Thanks to Josh Nichols for this useful tool.
 
 == Copyright
 
