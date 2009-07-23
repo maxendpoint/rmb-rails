@@ -1,12 +1,38 @@
-= rmb-rails
 
-= RESTful Message Beans for Ruby on Rails
+= rmb-rails: RESTful Message Beans for Ruby on Rails
 
 = Introduction
 
 = Theory of Operation
 
+As an Enterprise Architect in a lengthy career in software development, I saw a lot of message broker deployments in many large corporations.  
+These systems were used primarily 
+to knit together disparate computing 'silos' into a single fabric.  The implementations varied significantly, some were well engineered 
+and managed, others were basket cases of poor planning.  One significant problem was the addition of subscriber behavior inside existing 
+applications.  Many of these applications were single threaded and had no real ability to construct a thread to wait on a subscriber.receive 
+method.  This issue was resolved by a variety of means, many of which involved polling the subscriber queue periodically, picking up some or 
+all of the messages waiting, and processing them through the application.  Polling does not scale well, if the application had many worker 
+instances, they all tended to compete with one another and together, consumed a lot of CPU time in polling loops.  If you slowed down the polling
+frequency, then you got latency problems where messages sat in the queue when then readers were sleeping.  The real solution was to construct 
+some form of subscriber adapter that could inject messages into the applications standard incoming data stream.  The Enterprise Java Message Bean is
+a good example of this kind of adapter.  Message arrival on a designated queue or topic caused the activation of a Message Bean within the EJB 
+container, allowing full participation in transactions within the container.  
+
+There is a real parallel between a Java EJB application and a Ruby-on-Rails application, and the Rails environment needs a method to get incoming
+message broker subscriptions injected directly into the main Rails data stream.  So, how can we convert an MQ message into an http request?
+The rubygem rmb-rails addresses that issue by creating an infrastructure where daemon processes, called listeners, can connect to a specified message 
+broker, receive messages from that broker, and then forward them on to a standard Rails controller.  In other words, then daemon listener processes 
+act as browsers doing a form of file upload.
+
 = Component classes
+* module RMB
+* class Properties
+* class ListenerClient
+* class ListenerMain
+* class Subscriber
+* class Submitter
+* class StompSubscriber
+* class MechanizeSubmitter
 
 = Installation
 
