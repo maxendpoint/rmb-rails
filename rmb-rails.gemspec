@@ -35,7 +35,7 @@ Gem::Specification.new do |s|
   ]
   s.has_rdoc = true
   s.homepage = %q{http://github.com/explainer/rmb-rails}
-  s.rdoc_options = ["--charset=UTF-8", "--inline-source"]
+  s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{rmb-rails}
   s.rubygems_version = %q{1.3.1}
