@@ -73,7 +73,9 @@ demo rails application using this gem.
 
 == Credits
 {ActiveMQ}[http://activemq.apache.org/]
+
 {Enterprise Recipes with Ruby and Rails}[http://www.pragprog.com/titles/msenr/enterprise-recipes-with-ruby-and-rails]
+
 {Jeweler gem}[http://technicalpickles.github.com/jeweler/]
 
 == Copyright
