@@ -24,7 +24,7 @@ begin
   
     gem.add_dependency(%q<stomp>, [">= 1.1"])
     gem.add_dependency(%q<mechanize>, ["= 0.9.2"])
-    gem.add_dependency(%q<daemons>, [">= 1.1.10"])
+    gem.add_dependency(%q<daemons>, [">= 1.0.10"])
     
     gem.files = [
       ".document",
