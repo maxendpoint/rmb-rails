@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{rmb-rails}
-  s.version = "0.0.8"
+  s.version = "0.0.9"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ken Burgett"]
@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
      ".gitignore",
      "LICENSE",
      "README.rdoc",
+     "README",
      "Rakefile",
      "VERSION",
      "lib/listener_client.rb",
@@ -49,8 +50,17 @@ Gem::Specification.new do |s|
     s.specification_version = 2
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+      s.add_dependency(%q<stomp>, [">= 1.1"])
+      s.add_dependency(%q<mechanize>, ["= 0.9.2"])
+      s.add_dependency(%q<daemons>, [">= 1.1.10"])
     else
+      s.add_dependency(%q<stomp>, [">= 1.1"])
+      s.add_dependency(%q<mechanize>, ["= 0.9.2"])
+      s.add_dependency(%q<daemons>, [">= 1.1.10"])
     end
   else
+    s.add_dependency(%q<stomp>, [">= 1.1"])
+    s.add_dependency(%q<mechanize>, ["= 0.9.2"])
+    s.add_dependency(%q<daemons>, [">= 1.1.10"])
   end
 end
