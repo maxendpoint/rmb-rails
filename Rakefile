@@ -32,7 +32,6 @@ begin
        "LICENSE",
        "README.rdoc",
        "Rakefile",
-       "VERSION",
        "lib/listener_client.rb",
        "lib/listener_daemon.rb",
        "lib/listener_daemon_control.rb",
