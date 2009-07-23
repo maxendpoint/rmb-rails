@@ -1,6 +1,16 @@
 = rmb-rails
 
-Description goes here.
+= RESTful Message Beans for Ruby on Rails
+
+= Introduction
+
+= Theory of Operation
+
+= Component classes
+
+= Installation
+
+= Usage
 
 == Copyright
 
