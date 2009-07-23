@@ -1,7 +1,7 @@
 ﻿
 = rmb-rails: RESTful Message Beans for Ruby on Rails
 
-= Introduction
+== Introduction
 
 During a lengthy career in software development, and later as an enterprise architect, I saw a lot of message broker deployments in many 
 large corporations.  These systems were used primarily to knit together disparate computing 'silos' into a single fabric, as primarily 
@@ -21,7 +21,7 @@ There is a real parallel between a Java EJB application and a Ruby-on-Rails appl
 get incoming message broker subscriptions injected directly into the main Rails data stream.  So, how can we convert an MQ message 
 into an http request? The rubygem rmb-rails addresses this issue.
 
-= Theory of Operation
+== Theory of Operation
 
 As stated above, experience shows that polling a queue to pick up messages waiting there does not scale well.  I decided to create an 
 infrastructure where daemon processes, called listeners, can connect to a specified message broker, receive messages from that broker, 
@@ -29,7 +29,7 @@ and then forward them on to a standard Rails controller using a standard Rails p
 act as browsers doing a form of file upload.  The receiving rails controller is built on standard REST principles, and fits easily into 
 any Rails application.
 
-= Component classes
+== Component classes
 
 * module RMB
 The rmb-rails gem is packaged within a single module, called RMB.  The component classes are described below.  See the rdoc for each class for a full description.
@@ -50,7 +50,7 @@ This is a concrete subclass of Subscriber, which uses the Stomp protocol to list
 * class RMB::MechanizeSubmitter
 This is a concrete subclass of Submitter, which uses the WWW:Mechanize gem to package the message as a document and submit it to the controller.
 
-= Installation
+== Installation
  
 You will need an ActiveMQ message broker to use this gem.  See http://activemq.apache.org/ for download and configuration instructions.
 
@@ -61,7 +61,7 @@ $ sudo gem install explainer-rmb-rails
   
 $ sudo gem install rmb-rails (to get the same gem from rubyforge)
 
-= Usage
+== Usage
 
 Add the following require statement to your code to get access to this gem:
 
@@ -72,7 +72,7 @@ RESTful-Message-Beans(http://github.com/explainer/RESTful-Message-Beans/tree/mas
 demo rails application using this gem.
 
 == Credits
-{ActiveMQ}[http://activemq.apache.org/] find the message broker here
+{ActiveMQ}[http://activemq.apache.org/] You can find the ActiveMQ message broker here.
 
 {Enterprise Recipes with Ruby and Rails}[http://www.pragprog.com/titles/msenr/enterprise-recipes-with-ruby-and-rails] A special thanks to Maik Schmidt for this useful book.
 
