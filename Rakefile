@@ -4,13 +4,53 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
+  
+    gem.description = <<-EOF
+      ...something interesting here...
+    EOF
+
     gem.name = "rmb-rails"
     gem.summary = %Q{RESTful Message Beans for Rails}
-    gem.email = "keburgett@gmail.com"
-    gem.homepage = "http://github.com/explainer/rmb-rails"
+    gem.email = %Q{keburgett@gmail.com}
     gem.authors = ["Ken Burgett"]
-    gem.rubyforge_project = "rmb-rails"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+
+    gem.has_rdoc = true
+    gem.homepage = %q{http://github.com/explainer/rmb-rails}
+    gem.rdoc_options = ["--charset=UTF-8"]
+    gem.require_paths = ["lib"]
+    gem.rubyforge_project = %q{rmb-rails}
+    gem.rubygems_version = %q{1.3.1}
+  
+    gem.add_dependency(%q<stomp>, [">= 1.1"])
+    gem.add_dependency(%q<mechanize>, ["= 0.9.2"])
+    gem.add_dependency(%q<daemons>, [">= 1.1.10"])
+    
+    gem.files = [
+      ".document",
+       ".gitignore",
+       "LICENSE",
+       "README.rdoc",
+       "Rakefile",
+       "VERSION",
+       "lib/listener_client.rb",
+       "lib/listener_daemon.rb",
+       "lib/listener_daemon_control.rb",
+       "lib/listener_main.rb",
+       "lib/mechanize_submitter.rb",
+       "lib/rmb-rails.rb",
+       "lib/stomp_subscriber.rb",
+       "lib/submitter.rb",
+       "lib/subscriber.rb",
+       "rmb-rails.gemspec",
+       "test/rmb-rails_test.rb",
+       "test/test_helper.rb"
+    ]
+    
+    gem.extra_rdoc_files = [
+      "LICENSE",
+      "README.rdoc"
+    ]
   end
 
   Jeweler::RubyforgeTasks.new
