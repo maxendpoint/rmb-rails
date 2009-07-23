@@ -17,7 +17,7 @@ begin
 
     gem.has_rdoc = true
     gem.homepage = %q{http://github.com/explainer/rmb-rails}
-    gem.rdoc_options = ["--charset=UTF-8", "--inline-source"]
+    gem.rdoc_options = ["--charset=UTF-8"]
     gem.require_paths = ["lib"]
     gem.rubyforge_project = %q{rmb-rails}
     gem.rubygems_version = %q{1.3.1}
