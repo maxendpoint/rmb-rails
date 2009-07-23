@@ -71,6 +71,11 @@ Create an instance of RMB:ListenerClient to start/stop each listener daemon used
 RESTful-Message-Beans(http://github.com/explainer/RESTful-Message-Beans/tree/master) rails app, which provides a complete 
 demo rails application using this gem.
 
+== Credits
+{ActiveMQ}[http://activemq.apache.org/]
+{Enterprise Recipes with Ruby and Rails}[http://www.pragprog.com/titles/msenr/enterprise-recipes-with-ruby-and-rails]
+{Jeweler gem}[http://technicalpickles.github.com/jeweler/]
+
 == Copyright
 
 Copyright (c) 2009 Ken Burgett. See LICENSE for details.
