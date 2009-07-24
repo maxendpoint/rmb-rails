@@ -14,20 +14,21 @@ are written to be single-threaded.  So, publishing is easy, but subscribing is h
 
 The Enterprise Java Beans developers came up with an elegant solution to this problem.  While Session and Entity Beans could not be 
 configured to wait within the container for message arrival, that behavior could be delegated to the container.  This allows the 
-multi-threaded EJB operating system, the container, to subscribe to brokers and, when a message arrive, create a Message Bean which 
-then started a Session Bean (think of a rails controller) to instantiate one or more Entity Beans (think of a rails model) 
+multi-threaded EJB runtime, the container, to subscribe to brokers and, when a message arrives, create a Message Bean which 
+then started a Session Bean (think of a rails controller) to instantiate one or more Entity Beans (think of rails models) 
 to carry out the processing of the incoming message.  So I said to myself “self, where is the Ruby on Rails equivalent to 
 the Message Bean?”, and I decided to build a gem that could provide that behavior.
 
 There is a real parallel between a Java EJB application and a Ruby-on-Rails application, and the Rails environment needs a method 
-to get incoming message broker subscriptions injected directly into the main Rails data stream.  So, how can we convert an MQ message 
+to get incoming message broker subscriptions injected directly into the main Rails data stream.  Since the 'main Rails data stream' 
+is listening for http requests, how can we convert an MQ message 
 into an http request? The rubygem rmb-rails addresses this issue.
 
 == Theory of Operation
 
 I am not a fan of polling because I do not think that polling systems scale well, and can exhibit stability problems.  Therefore, I decided 
 to create an infrastructure where daemon processes, called listeners, can connect to a specified message broker, receive messages from 
-that broker, and then forward them on to a standard Rails controller using the standard REST protocol that is well supported by Rails.  
+that broker, and then forward them on to a standard Rails controller using the REST protocol that is well supported by Rails.  
 In other words, the daemon listener processes act as browsers doing a form of file upload.  The receiving rails controller is built on 
 standard REST principles, and fits easily into any Rails application.
 
@@ -57,22 +58,22 @@ This is a concrete subclass of Submitter, which uses the WWW:Mechanize gem to pa
  
 You will need an {ActiveMQ}[http://activemq.apache.org/] message broker to use this gem.  
 
+ $ gem sources -a http://gems.github.com (you only have to do this once)
 
-$ gem sources -a http://gems.github.com (you only have to do this once)
-$ sudo gem install explainer-rmb-rails
+ $ sudo gem install explainer-rmb-rails
 
   or
   
-$ sudo gem install rmb-rails (to get the same gem from rubyforge)
+ $ sudo gem install rmb-rails (to get the same gem from rubyforge)
 
 == Usage
 
 Add the following require statement to your code to get access to this gem:
 
-require 'rmb-rails'
+ require 'rmb-rails'
 
 Create an instance of RMB:ListenerClient to start/stop each listener daemon used.  Get the 
-RESTful-Message-Beans(http://github.com/explainer/RESTful-Message-Beans/tree/master) rails app, which provides a complete 
+{RESTful-Message-Beans}[http://github.com/explainer/RESTful-Message-Beans/tree/master] rails app, which provides a complete 
 demo rails application using this gem.  Look at the files lib/listener_daemon.rb and lib/listener_daemon_control.rb to understand how the
 daemon itself is constructed and controlled.
 
