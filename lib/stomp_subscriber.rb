@@ -1,3 +1,6 @@
+#
+# class RMB::StompSubscriber -- A concrete instance of a Submitter subclass, which uses the stomp protocol to subscribe to an ActiveMQ broker.
+#
 require 'stomp'
 require 'subscriber'
 

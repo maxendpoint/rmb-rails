@@ -1,17 +1,20 @@
+#
+# class RMB::MechanizeSubmitter -- A concrete instance of a Submitter subclass, uses the mechanize gem to forward received messages to the designated controller URL
+#
 require 'mechanize'
 require 'submitter'
 
 module RMB
   
   class MechanizeSubmitter < Submitter
-    attr_accessor :user, :password, :login_url, :delivery_url, :agent, :logger, :agent, :daemon_name
+    attr_accessor :user, :password, :login_url, :delivery_url, :agent, :logger, :agent, :app_name
 =begin rdoc
 +properties=(hash)+ Accepts a hash object containing all of the configuration properties required. These properties are copied into instance variables.
 =end  
     def properties=(hash)
       super
       @hash = hash
-      @daemon_name = "#{RMB::Properties.daemon_prefix}#{hash[:key]}"
+      @app_name = "#{RMB::Properties.daemon_prefix}#{hash[:key]}"
       submitter = hash[:submitter]
       @user = submitter[:user] || ""
       @password = submitter[:password] || ""
@@ -36,7 +39,7 @@ module RMB
 +marshal_message_body+ Extracts the message body from the rest of the message, and marshals it into a file.  The name of this file will be submitted to the rails app, along with other message attributes.
 =end  
     def marshal_message_body(message)
-      file = File.join("#{@hash[:working_dir]}", "tmp", "messages", "#{daemon_name}_#{message.headers["timestamp"]}.message")
+      file = File.join("#{@hash[:working_dir]}", "tmp", "messages", "#{app_name}_#{message.headers["timestamp"]}.message")
       File.open(file, "w+") do |f|
         Marshal.dump(message.body, f)
       end

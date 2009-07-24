@@ -1,8 +1,8 @@
+#
+# class RMB::ListenerMain -- An instance of this class constitutes the entire body of the daemon.
+#
 module RMB
-  #
-  # This is the class that gets instantiated from the listener daemon
-  # It contains the worker code of the daemon
-  #
+ 
   class ListenerMain
     attr_accessor :submitter, :subscriber, :logger, :hash
 =begin rdoc

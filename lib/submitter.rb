@@ -1,5 +1,6 @@
-
-
+#
+# class RMB::Submitter -- An abstract superclass of all submitters
+#
 module RMB
 
   class Submitter

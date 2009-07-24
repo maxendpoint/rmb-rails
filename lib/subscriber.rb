@@ -1,4 +1,6 @@
-
+#
+# class RMB::Subscriber -- An abstract superclass of all subscribers
+#
 module RMB
 
 class Subscriber

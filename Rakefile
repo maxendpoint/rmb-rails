@@ -4,7 +4,7 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-  
+    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
     gem.description = <<-EOF
       ...something interesting here...
     EOF
@@ -13,8 +13,7 @@ begin
     gem.summary = %Q{RESTful Message Beans for Rails}
     gem.email = %Q{keburgett@gmail.com}
     gem.authors = ["Ken Burgett"]
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
-
+   
     gem.has_rdoc = true
     gem.homepage = %q{http://github.com/explainer/rmb-rails}
     gem.rdoc_options = ["--charset=UTF-8"]

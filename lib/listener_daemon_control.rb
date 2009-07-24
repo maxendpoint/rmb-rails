@@ -1,7 +1,7 @@
+#
+# Listener Daemon Control Program -- This ruby script is invoked by the ListenerClient.control method to start and stop the daemon
+#
 require 'rubygems'
-#
-# Listener Daemon Control Program
-#
 require 'logger'
 require 'daemons'
 require 'rmb-rails'
@@ -41,7 +41,6 @@ include RMB
 
 # Value of ARGV[2] => listener key
     key = ARGV[2]
-    daemon_name = "listener_daemon_#{key}"
 # Value of ARGV[2] => --
 # Value of ARGV[3] => listener key
 
