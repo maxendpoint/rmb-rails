@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-
+# This is a test KEB
 Gem::Specification.new do |s|
   s.name = %q{rmb-rails}
   s.version = "0.1.5"
